@@ -6,35 +6,40 @@
 </head>
 <body>
 
-  <div class="row">
-    <div class="col text-center">
-      RTC_TEST
-    </div>
-  </div>
+  <div id="container">
 
-  <div class="row">
-    <div class="col text-center">
-      <video id="inputVideo" class="border border-dark" width="642px" height="482px" autoplay>Video stream not available.</video>
+    <div class="row">
+      <div class="col text-center">
+        RTC_TEST
+      </div>
     </div>
-    <div class="col text-center">
-      <video id="outputVideo" class="border border-dark" width="642px" height="482px" autoplay>Video stream not available.</video>
+
+    <div class="row">
+      <div class="col text-center">
+        <video id="inputVideo" class="border border-dark" width="642px" height="482px" autoplay>Video stream not available.</video>
+      </div>
+      <div class="col text-center">
+        <video id="outputVideo" class="border border-dark" width="642px" height="482px" autoplay>Video stream not available.</video>
+      </div>
     </div>
+
   </div>
 
   <div class="row">
     <div class="col text-center">
       <span>{{errMsg}}</span>
-    </div>
   </div>
 
-  <div class="row">
-    <div class="col text-center">
-      <button id="startBtn" class="btn btn-outline-primary" *ngIf="isStartBtn" (click)="openWebCamera()">開啟 鏡頭</button>&nbsp;&nbsp;
-      <button id="stopBtn" class="btn btn-outline-danger" *ngIf="isStopBtn" (click)="stopWebCamera()">關閉 鏡頭</button>&nbsp;&nbsp;
-      <button id="resetBtnStart" class="btn btn-outline-info" *ngIf="isResetBtnStart" (click)="starVideo()">開始 錄影</button>
-      <button id="resetBtnStop" class="btn btn-outline-info" *ngIf="isResetBtnStop" (click)="stopVideo()">停止 錄影</button>
-    </div>
   </div>
+    <div class="row">
+      <div class="col text-center">
+        <button id="startBtn" class="btn btn-outline-primary" *ngIf="isStartBtn" (click)="openWebCamera()">開啟 鏡頭</button>&nbsp;&nbsp;
+        <button id="stopBtn" class="btn btn-outline-danger" *ngIf="isStopBtn" (click)="stopWebCamera()">關閉 鏡頭</button>&nbsp;&nbsp;
+        <button id="resetBtnStart" class="btn btn-outline-info" *ngIf="isResetBtnStart" (click)="starVideo()">開始 錄影</button>
+        <button id="resetBtnStop" class="btn btn-outline-info" *ngIf="isResetBtnStop" (click)="stopVideo()">停止 錄影</button>
+        <button id="saveImgs" class="btn btn-outline-info" (click)="saveImg()">畫面截圖</button>
+      </div>
+    </div>
 
 </body>
 </html>

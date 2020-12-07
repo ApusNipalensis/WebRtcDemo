@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MediaRecorder } from 'extendable-media-recorder';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-root',
@@ -127,5 +128,21 @@ export class AppComponent {
 
   }
 
+  /** 畫面截圖 */
+  saveImg() {
+    // 將畫面捲到最上方
+    scrollTo(0, 0);
+
+    // 使用 html2canvas 進行範圍截圖
+    html2canvas(document.getElementById('container')).then( canvas => {
+      if (canvas) {
+        // 下載圖片
+        const dl = document.createElement('a');
+        dl.href = canvas.toDataURL('image/jpeg');
+        dl.download = 'image.jpg';
+        dl.click();
+      }
+    });
+  }
 
 }
